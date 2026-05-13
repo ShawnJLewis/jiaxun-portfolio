@@ -91,6 +91,20 @@ a:hover{border-bottom-color:var(--accent);opacity:1}
 .pub-card .pv{font-size:.65rem;font-weight:500;background:var(--accent-soft);color:var(--accent);padding:.08rem .45rem;border-radius:4px}
 .pub-card .py{font-size:.65rem;color:var(--fg-muted);font-weight:500;font-family:var(--font-mono)}
 .pub-card.patent{border-left:3px solid var(--accent-dim)}
+.sec-sub{font-family:var(--font-editor);font-size:clamp(1.6rem,4vw,2.6rem);letter-spacing:-.02em;line-height:1.15;color:var(--fg-heading);margin-bottom:.5rem;margin-top:2.5rem}
+.sec-sub-desc{font-size:.82rem;color:var(--fg-muted);margin-bottom:1rem}
+.pat-card{border-radius:var(--radius);padding:1rem 1.3rem;background:var(--bg-card);border:1px solid var(--line);border-left:3px solid var(--accent-dim);box-shadow:var(--shadow);cursor:pointer;transition:border .3s,box-shadow .3s}
+.pat-card:hover{box-shadow:var(--shadow-lg);border-color:var(--accent-dim)}
+.pat-card.pending{border-left-color:#c8961e}
+.pat-card .pat-tag{font-size:.65rem;font-weight:500;background:var(--accent-soft);color:var(--accent);padding:.08rem .45rem;border-radius:4px;display:inline-block;margin-right:.3rem}
+.pat-card.pending .pat-tag{background:#c8961e20;color:#c8961e}
+.pat-card .pat-title{font-size:.86rem;color:var(--fg-heading);font-weight:500;line-height:1.4;font-family:var(--font-sans)}
+.pat-card .pat-meta{font-size:.74rem;color:var(--fg-muted);margin-top:.1rem}
+.pat-card .pat-bottom{display:flex;gap:.4rem;align-items:center;margin-top:.2rem}
+.pat-card .pat-class{font-family:var(--font-mono);font-size:.65rem;color:var(--fg-muted)}
+.pat-card .pat-assignee{font-size:.65rem;color:var(--fg-muted);font-weight:500}
+.pat-card .pat-hint{font-family:var(--font-sans);font-size:.65rem;color:var(--accent);opacity:0;transition:opacity .4s;margin-top:.5rem;display:inline-block}
+.pat-card:hover .pat-hint{opacity:1}
 
 /* --- activities --- */
 .act-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(240px,1fr));gap:.5rem}
@@ -299,49 +313,49 @@ h1{font-size:2.6rem}h2{font-size:1.4rem}.hero{padding:4rem 0}.act-grid{grid-temp
 <div class="pub-card"><div class="pt">Interference Cancellation for Magnetometers in ROVs</div><div class="pa">Z. Sha, et al.</div><div class="pb"><span class="pv">IEEE Sensors Journal</span><span class="py">2023</span></div></div>
 </div>
 
-<h2 style="margin-top:2.5rem"><span class="block-zh">专利</span><span class="block-en">Patents</span></h2>
-<p style="font-size:.82rem;color:var(--fg-muted);margin-bottom:1rem"><span class="block-zh">点击卡片查看完整信息（权利要求、摘要、分类）</span><span class="block-en">Click a card for full details (claims, abstract, classification)</span></p>
+<h2 class="sec-sub"><span class="block-zh">专利</span><span class="block-en">Patents</span></h2>
+<p class="sec-sub-desc"><span class="block-zh">点击卡片查看完整信息</span><span class="block-en">Click for full details</span></p>
 <div class="card-stack">
-<div class="pub-card patent" onclick="openModal('pat-bubble')" style="cursor:pointer">
-<div class="pt">🔬 <span class="lang-zh">海底气泡检测的方法、装置、电子设备及介质</span><span class="block-en">Seabed Bubble Detection Method &amp; Device</span></div>
-<div class="pa">CN113899737B · 2024 · <span class="lang-zh">已授权</span><span class="lang-en">Granted</span></div>
-<div class="pb"><span class="pv">G01N21/84</span><span class="py" style="font-family:var(--font-sans)">灵动智能光学</span></div>
-<span class="hint" style="margin-top:.3rem;display:inline-block"><span class="block-zh">查看详情 →</span><span class="block-en">Details →</span></span>
+<div class="pat-card" onclick="openModal('pat-bubble')">
+<div class="pat-title"><span class="lang-zh">海底气泡检测的方法、装置、电子设备及介质</span><span class="block-en">Seabed Bubble Detection Method &amp; Device</span></div>
+<div class="pat-meta"><span class="pat-tag">授权</span> CN113899737B · 2024</div>
+<div class="pat-bottom"><span class="pat-class">G01N21/84</span><span class="pat-assignee">灵动智能光学</span></div>
+<span class="pat-hint"><span class="block-zh">查看详情 →</span><span class="block-en">Details →</span></span>
 </div>
 
-<div class="pub-card patent" onclick="openModal('pat-lf')" style="cursor:pointer">
-<div class="pt">🔬 <span class="lang-zh">低频无线通信系统的分集增益与解码模式切换方法</span><span class="block-en">Diversity Gain &amp; Decoding Mode Switching for Low-Freq Wireless</span></div>
-<div class="pa">CN121643937B · 2026 · <span class="lang-zh">已授权</span><span class="lang-en">Granted</span></div>
-<div class="pb"><span class="pv">H04B17/00</span><span class="py" style="font-family:var(--font-sans)">浙江大学</span></div>
-<span class="hint" style="margin-top:.3rem;display:inline-block"><span class="block-zh">查看详情 →</span><span class="block-en">Details →</span></span>
+<div class="pat-card" onclick="openModal('pat-lf')">
+<div class="pat-title"><span class="lang-zh">低频无线通信系统的分集增益与解码模式切换方法</span><span class="block-en">Diversity Gain &amp; Decoding Mode Switching</span></div>
+<div class="pat-meta"><span class="pat-tag">授权</span> CN121643937B · 2026</div>
+<div class="pat-bottom"><span class="pat-class">H04B17/00</span><span class="pat-assignee">浙江大学</span></div>
+<span class="pat-hint"><span class="block-zh">查看详情 →</span><span class="block-en">Details →</span></span>
 </div>
 
-<div class="pub-card patent" onclick="openModal('pat-compress')" style="cursor:pointer">
-<div class="pt">🔬 <span class="lang-zh">自适应数据压缩方法、系统及设备</span><span class="block-en">Adaptive Data Compression Method &amp; System</span></div>
-<div class="pa">CN120357909B · 2025 · <span class="lang-zh">已授权</span><span class="lang-en">Granted</span></div>
-<div class="pb"><span class="pv">H03M7/40</span><span class="py" style="font-family:var(--font-sans)">浙江大学</span></div>
-<span class="hint" style="margin-top:.3rem;display:inline-block"><span class="block-zh">查看详情 →</span><span class="block-en">Details →</span></span>
+<div class="pat-card" onclick="openModal('pat-compress')">
+<div class="pat-title"><span class="lang-zh">自适应数据压缩方法、系统及设备</span><span class="block-en">Adaptive Data Compression Method &amp; System</span></div>
+<div class="pat-meta"><span class="pat-tag">授权</span> CN120357909B · 2025</div>
+<div class="pat-bottom"><span class="pat-class">H03M7/40</span><span class="pat-assignee">浙江大学</span></div>
+<span class="pat-hint"><span class="block-zh">查看详情 →</span><span class="block-en">Details →</span></span>
 </div>
 
-<div class="pub-card patent" onclick="openModal('pat-emc')" style="cursor:pointer">
-<div class="pt">🔬 <span class="lang-zh">无刷直流电机磁干扰消除方法</span><span class="block-en">Brushless DC Motor EMI Cancellation</span></div>
-<div class="pa">CN114499057B · 2023 · <span class="lang-zh">已授权</span><span class="lang-en">Granted</span></div>
-<div class="pb"><span class="pv">H02K11/02</span><span class="py" style="font-family:var(--font-sans)">浙江大学</span></div>
-<span class="hint" style="margin-top:.3rem;display:inline-block"><span class="block-zh">查看详情 →</span><span class="block-en">Details →</span></span>
+<div class="pat-card" onclick="openModal('pat-emc')">
+<div class="pat-title"><span class="lang-zh">无刷直流电机磁干扰消除方法</span><span class="block-en">Brushless DC Motor EMI Cancellation</span></div>
+<div class="pat-meta"><span class="pat-tag">授权</span> CN114499057B · 2023</div>
+<div class="pat-bottom"><span class="pat-class">H02K11/02</span><span class="pat-assignee">浙江大学</span></div>
+<span class="pat-hint"><span class="block-zh">查看详情 →</span><span class="block-en">Details →</span></span>
 </div>
 
-<div class="pub-card patent" onclick="openModal('pat-cluster')" style="cursor:pointer;border-left-color:#d4a017">
-<div class="pt">⏳ <span class="lang-zh">水声传感网络分簇方法、系统、设备及介质</span><span class="block-en">UASN Clustering Method &amp; System</span></div>
-<div class="pa">CN121865364A · 2026 · <span class="lang-zh">审中</span><span class="lang-en">Pending</span></div>
-<div class="pb"><span class="pv" style="background:#d4a01720;color:#d4a017">审中</span><span class="py" style="font-family:var(--font-sans)">浙江大学海南研究院</span></div>
-<span class="hint" style="margin-top:.3rem;display:inline-block"><span class="block-zh">查看详情 →</span><span class="block-en">Details →</span></span>
+<div class="pat-card pending" onclick="openModal('pat-cluster')">
+<div class="pat-title"><span class="lang-zh">水声传感网络分簇方法、系统、设备及介质</span><span class="block-en">UASN Clustering Method &amp; System</span></div>
+<div class="pat-meta"><span class="pat-tag">审中</span> CN121865364A · 2026</div>
+<div class="pat-bottom"><span class="pat-class">—</span><span class="pat-assignee">浙江大学海南研究院</span></div>
+<span class="pat-hint"><span class="block-zh">查看详情 →</span><span class="block-en">Details →</span></span>
 </div>
 
-<div class="pub-card patent" onclick="openModal('pat-mud')" style="cursor:pointer;border-left-color:#d4a017">
-<div class="pt">⏳ <span class="lang-zh">泥浆脉冲通信信道估计方法、设备、介质及产品</span><span class="block-en">Mud Pulse Channel Estimation Method</span></div>
-<div class="pa">CN120934938A · 2025 · <span class="lang-zh">审中</span><span class="lang-en">Pending</span></div>
-<div class="pb"><span class="pv" style="background:#d4a01720;color:#d4a017">审中</span><span class="py" style="font-family:var(--font-sans)">中石化 · 浙江大学</span></div>
-<span class="hint" style="margin-top:.3rem;display:inline-block"><span class="block-zh">查看详情 →</span><span class="block-en">Details →</span></span>
+<div class="pat-card pending" onclick="openModal('pat-mud')">
+<div class="pat-title"><span class="lang-zh">泥浆脉冲通信信道估计方法、设备、介质及产品</span><span class="block-en">Mud Pulse Channel Estimation Method</span></div>
+<div class="pat-meta"><span class="pat-tag">审中</span> CN120934938A · 2025</div>
+<div class="pat-bottom"><span class="pat-class">H04L25/02</span><span class="pat-assignee">中石化 · 浙江大学</span></div>
+<span class="pat-hint"><span class="block-zh">查看详情 →</span><span class="block-en">Details →</span></span>
 </div>
 </div>
 </div>
