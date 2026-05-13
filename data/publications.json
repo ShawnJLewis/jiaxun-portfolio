@@ -1,0 +1,212 @@
+{
+  "papers": [
+    {
+      "id": "cpcss",
+      "title": "Memoryless Continuous-Phase Chirp Spread Spectrum for Mud Pulse Telemetry",
+      "type": "conference",
+      "venue": "ICICSP 2024",
+      "year": 2024,
+      "authors": ["J. Lu", "Z. Sha", "Y. Jiang", "Y. Wei", "F. Qu", "X. Tu"],
+      "doi": null,
+      "doi_status": "In Press",
+      "role": "第一作者",
+      "contribution": "独立完成早期文献调研；主导无记忆连续相位Chirp扩频（CPCSS）的方法设计与推导；搭建系统仿真平台验证算法性能；起草并完成论文初稿撰写。",
+      "scenario": "泥浆脉冲遥测需在极窄带宽和极高背景噪声的极端限制下传输钻井参数。",
+      "problem": "传统调制抗干扰弱，连续波遥测的复杂同步算法在强泵噪声下极易失效。",
+      "solution": "提出专为泥浆信道设计的无记忆连续相位Chirp扩频（CPCSS），结合Chirp抗噪性和无记忆/连续相位设计，平滑相位过渡并降低状态追踪复杂度。",
+      "result": "在不显著增加计算复杂度的前提下，大幅增强极端噪声环境下的解码性能，提高带宽利用率与可靠性。"
+    },
+    {
+      "id": "vbsdfe",
+      "title": "Variational Bayesian Sparse Decision-Feedback Equalization Based on RLS Algorithm in Underwater Acoustic Communications",
+      "type": "article",
+      "venue": "IEEE Communications Letters",
+      "year": 2025,
+      "authors": ["Y. Fu", "R. Shen", "X. Tu", "J. Lu", "H. Bai", "Y. Wei", "F. Qu"],
+      "doi": "10.1109/LCOMM.2025.3649767",
+      "role": "参与",
+      "contribution": "水下实验数据采集。负责水声通信算法海试/湖试现场的数据采集与整编；参与论文的审阅、修改与最终校稿。",
+      "scenario": "水声通信面临长时延扩展和多普勒频移，采用RLS-DFE处理严重码间干扰。",
+      "problem": "传统RLS-DFE计算复杂度高，且对均衡器阶数、遗忘因子等参数极度敏感，手动调参难以适应动态信道。",
+      "solution": "提出基于变分贝叶斯的稀疏判决反馈均衡（VB-SDFE），通过带遗忘因子的重叠子块处理和变分推断自动控制稀疏性并优化预均衡器系数。",
+      "result": "降低人工调参依赖。21.5 km海试表明其在复杂信道下鲁棒性极强，信噪比提升7.8 dB并实现零误码。"
+    },
+    {
+      "id": "newton",
+      "title": "Newtonized Sparse Channel Estimation for Mud Pulse Telemetry",
+      "type": "article",
+      "venue": "Geoenergy Science and Engineering",
+      "year": 2025,
+      "authors": ["Z. Sha", "J. Zhu", "J. Lu", "Y. Fu", "X. Tu", "Z. Zhang", "Y. Wei", "F. Qu"],
+      "doi": "10.1016/j.geoen.2025.214167",
+      "role": "参与",
+      "contribution": "实验设计与数据验证。负责设计泥浆脉冲遥测试验方案并主导现场数据采集；深入参与稀疏信道估计方法的讨论与优化；协助完成论文的审阅与校稿。",
+      "scenario": "随钻测量（MWD）中泥浆脉冲遥测面临强烈泥浆泵噪声和时变/多径效应衰落的恶劣信道环境。",
+      "problem": "传统信道估计基于高斯白噪声假设，难以应对复杂的结构化干扰、动态传输延迟和多普勒扩展。",
+      "solution": "提出牛顿化稀疏信道估计，序贯选择主要信号分量，结合牛顿法无网格迭代精炼多普勒和延迟参数。",
+      "result": "显著提升泥浆脉冲遥测的频谱效率和信道估计精度，成功从强泵噪声中提取有效信号，仿真和现场实验均验证其鲁棒性。"
+    },
+    {
+      "id": "topology",
+      "title": "Topology Optimization Based on Multi-Objective Genetic Algorithm in Multi-Node Underwater Detection Networks",
+      "type": "conference",
+      "venue": "OCEANS 2025 Brest",
+      "year": 2025,
+      "authors": ["Y. Yuan", "Y. Yuan", "F. Nie", "J. Lu", "Y. Qiao", "Z. Sha", "Y. Wei", "F. Qu"],
+      "doi": "10.1109/OCEANS58557.2025.11104560",
+      "role": "参与",
+      "contribution": "工程应用顾问支持。为多节点水声网络的工程实际部署、系统通信延迟与能耗限制等问题提供专业顾问支持与技术讨论；参与论文校稿。",
+      "scenario": "多节点水下探测网络（UDN）广泛用于海洋监测，需在网络覆盖范围与水声通信延迟之间寻找平衡。",
+      "problem": "现有拓扑优化多为单一目标，无法有效协调高覆盖率与低探测延迟的冲突。",
+      "solution": "提出基于多目标遗传算法（MOGA）的分布式拓扑优化框架，对独立网络簇计算帕累托最优拓扑，并纳入能耗指标。",
+      "result": "在覆盖效率、通信延迟间取得最佳折衷，同时通过降低能耗有效延长水下传感器网络的运行寿命。"
+    },
+    {
+      "id": "array-calib",
+      "title": "An Array Calibration Method based on Beam Pattern and Neural Network in Underwater USBL System",
+      "type": "conference",
+      "venue": "OCEANS 2024 Singapore",
+      "year": 2024,
+      "authors": ["Y. Lu", "J. Lu", "J. Qian", "F. Qu", "Y. Wei"],
+      "doi": "10.1109/OCEANS51537.2024.10682322",
+      "role": "第二作者",
+      "contribution": "实验核心设计与数据分析。作为第二作者，主导系统校准实验的总体设计与实地数据采集；负责频响测试信号的核心设计；独立完成系统频率响应指标的计算与分析评估。",
+      "scenario": "水下超短基线（USBL）系统对阵列安装的物理误差极其敏感，细微偏差会导致定位精度急剧下降。",
+      "problem": "传统基于模型或现场校准的方法需收集多角度海量数据，费时费力，无法满足工程快速部署需求。",
+      "solution": "提出结合差分波束方向图和神经网络的快速校准法，将阵元误差建模为极坐标下半径和角度偏差，利用神经网络实现单次测量校准。",
+      "result": "极大节省现场校准时间。相比传统方法，波达方向（DoA）估计误差平均降低46.5%。"
+    },
+    {
+      "id": "emc-rov",
+      "title": "Interference Cancellation and Wavelet Denoising for Magnetometers in Electric Work-Class ROVs",
+      "type": "article",
+      "venue": "IEEE Sensors Journal",
+      "year": 2023,
+      "authors": ["Z. Sha", "S. Hu", "S. Yang", "J. Lu", "Y. Wei", "F. Qu"],
+      "doi": "10.1109/JSEN.2023.3321042",
+      "role": "参与",
+      "contribution": "降噪算法理论支持。参与针对复杂电磁干扰源特征的降噪方法论的深入探讨与推导评估；协助完成论文的审阅与校对。",
+      "scenario": "作业级ROV携带磁力计定位海底电缆，但ROV无刷电机会产生极强的动态磁场自干扰。",
+      "problem": "缺乏针对重型电气化ROV平台的高效补偿机制，无法同时处理线性相关设备干扰与随机环境噪声。",
+      "solution": "提出基于小波变换的两步法：先建立磁干扰与电机转速相关模型消除结构化干扰，再采用小波去噪平滑环境高频白噪声。",
+      "result": "仿真与湖泊实验证明能大幅消除直流无刷电机引起的测量误差，显著提升ROV海底电缆磁探测的定位准确性。"
+    }
+  ],
+  "patents": [
+    {
+      "id": "bubble",
+      "title_zh": "海底气泡检测的方法、装置、电子设备及介质",
+      "title_en": "Seabed Bubble Detection Method, Device, Electronic Equipment and Medium",
+      "status": "granted",
+      "grant_date": "2024.11.08",
+      "numbers": {
+        "application": "CN202110924342.2",
+        "app_date": "2021.08.12",
+        "publication": "CN113899737A",
+        "pub_date": "2022.01.07",
+        "grant": "CN113899737B",
+        "grant_date": "2024.11.08"
+      },
+      "classification": "G01N21/84",
+      "assignee": "灵动智能光学（杭州）有限公司",
+      "abstract_zh": "本发明通过激光与LED同时照射获取海底气泡图像，结合通道分离、形态学处理与坐标转换，实现气泡距离、位置、直径、面积及体积的精确计算。"
+    },
+    {
+      "id": "lf-wireless",
+      "title_zh": "低频无线通信系统的分集增益与解码模式切换方法",
+      "title_en": "Diversity Gain and Decoding Mode Switching Method for Low-Frequency Wireless Communication System",
+      "status": "granted",
+      "grant_date": "2026.04.14",
+      "numbers": {
+        "application": "CN202610158106.7",
+        "app_date": "2026.02.04",
+        "publication": "CN121643937A",
+        "pub_date": "2026.03.10",
+        "grant": "CN121643937B",
+        "grant_date": "2026.04.14"
+      },
+      "classification": "H04B17/00",
+      "assignee": "浙江大学",
+      "abstract_zh": "本发明通过多时段数据采集与滤波器设计，提高信噪比并自适应切换解码方式，克服低频无线通信中的深度衰落问题。"
+    },
+    {
+      "id": "compress",
+      "title_zh": "自适应数据压缩方法、系统及设备",
+      "title_en": "Adaptive Data Compression Method, System and Device",
+      "status": "granted",
+      "grant_date": "2025.09.09",
+      "numbers": {
+        "application": "CN202510854517.5",
+        "app_date": "2025.08.25",
+        "publication": "CN120357909A",
+        "pub_date": "2025.07.22",
+        "grant": "CN120357909B",
+        "grant_date": "2025.09.09"
+      },
+      "classification": "H03M7/40",
+      "assignee": "浙江大学",
+      "abstract_zh": "本申请基于香农熵与重复率，结合自适应压缩算法选择机制，提升数据压缩效率与普适性。"
+    },
+    {
+      "id": "emc",
+      "title_zh": "无刷直流电机磁干扰消除方法",
+      "title_en": "Brushless DC Motor Magnetic Interference Cancellation Method",
+      "status": "granted",
+      "grant_date": "2023.06.20",
+      "numbers": {
+        "application": "CN202210248214.5",
+        "app_date": "2022.03.14",
+        "publication": "CN114499057A",
+        "pub_date": "2022.05.13",
+        "grant": "CN114499057B",
+        "grant_date": "2023.06.20"
+      },
+      "classification": "H02K11/02",
+      "assignee": "浙江大学",
+      "abstract_zh": "本发明通过建立电机转速与磁干扰的关系模型，有效消除无刷直流电机对磁力计的干扰，提高探测准确性。"
+    },
+    {
+      "id": "cluster",
+      "title_zh": "水声传感网络分簇方法、系统、设备及介质",
+      "title_en": "Underwater Acoustic Sensor Network Clustering Method, System, Device and Medium",
+      "status": "pending",
+      "numbers": {
+        "application": "CN202610327886.3",
+        "app_date": "2026.03.18",
+        "publication": "CN121865364A",
+        "pub_date": "2026.04.14"
+      },
+      "classification": null,
+      "applicant": "浙江大学海南研究院",
+      "abstract_zh": "本申请通过水声传感网络分簇模型与在线优化机制，动态平衡多目标性能，适应水下环境变化。"
+    },
+    {
+      "id": "mud-channel",
+      "title_zh": "泥浆脉冲通信信道估计方法、设备、介质及产品",
+      "title_en": "Mud Pulse Communication Channel Estimation Method, Device, Medium and Product",
+      "status": "pending",
+      "numbers": {
+        "application": "CN202511233989.5",
+        "app_date": "2025.09.01",
+        "publication": "CN120934938A",
+        "pub_date": "2025.11.11"
+      },
+      "classification": "H04L25/02",
+      "applicant": "中国石油化工股份有限公司、浙江大学、中石化石油工程技术服务股份有限公司、中石化经纬有限公司",
+      "abstract_zh": "本申请首次将牛顿化正交匹配追踪方法应用于泥浆脉冲通信信道估计，克服离网格效应，提高估计精度。"
+    }
+  ],
+  "total_stats": {
+    "papers": 6,
+    "journal_articles": 3,
+    "conference_papers": 3,
+    "patents_granted": 4,
+    "patents_pending": 2,
+    "patent_total": 6,
+    "awards": 17,
+    "toefl": 104,
+    "cet6": 669,
+    "field_days": "100+",
+    "rd_hours": "600+"
+  }
+}
