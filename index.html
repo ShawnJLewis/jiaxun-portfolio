@@ -3,49 +3,45 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title lang="en">Jiaxun Lu — Scholarship Defense</title>
-  <title lang="zh" hidden>卢家勋 — 子辰奖学金答辩</title>
+  <title lang="en">Jiaxun Lu — Signal Processing & Mud Pulse Telemetry</title>
+  <title lang="zh" hidden>卢家勋 — 信号处理与随钻遥传</title>
   <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&family=Lora:ital,wght@0,400;0,600;1,400&family=Noto+Serif+SC:wght@400;600;700&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&family=Noto+Serif+SC:wght@400;600;700&display=swap" rel="stylesheet">
   <style>
     :root {
-      --bg: oklch(10% 0.01 75);
-      --bg-alt: oklch(13% 0.01 75);
-      --bg-card: oklch(15% 0.01 75);
+      --bg: oklch(8% 0.01 75);
+      --bg-alt: oklch(11% 0.01 75);
+      --bg-card: oklch(14% 0.008 75);
       --fg: oklch(88% 0.01 75);
-      --fg-heading: oklch(94% 0.008 75);
-      --fg-muted: oklch(58% 0.015 75);
-      --accent: oklch(65% 0.14 60);
-      --accent-dim: oklch(65% 0.14 60 / 0.12);
-      --line: oklch(22% 0.008 75);
-      --line-light: oklch(28% 0.01 75);
+      --fg-heading: oklch(95% 0.006 75);
+      --fg-muted: oklch(55% 0.015 75);
+      --accent: oklch(65% 0.14 55);
+      --accent-dim: oklch(65% 0.14 55 / 0.12);
+      --line: oklch(20% 0.008 75);
+      --line-light: oklch(26% 0.01 75);
       --font-display: 'Space Grotesk', 'Noto Serif SC', sans-serif;
-      --font-body: 'Lora', 'Noto Serif SC', Georgia, serif;
-      --max-w: 900px;
-      --radius: 6px;
+      --font-body: 'Noto Serif SC', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+      --max-w: 920px;
+      --radius-sm: 4px;
+      --radius-md: 10px;
     }
     [data-theme="light"] {
       --bg: oklch(96% 0.005 75);
       --bg-alt: oklch(93% 0.006 75);
       --bg-card: oklch(98% 0.005 75);
-      --fg: oklch(18% 0.015 75);
-      --fg-heading: oklch(10% 0.02 75);
-      --fg-muted: oklch(48% 0.015 75);
-      --accent: oklch(48% 0.16 60);
-      --accent-dim: oklch(48% 0.16 60 / 0.08);
-      --line: oklch(86% 0.008 75);
-      --line-light: oklch(80% 0.01 75);
+      --fg: oklch(16% 0.015 75);
+      --fg-heading: oklch(8% 0.02 75);
+      --fg-muted: oklch(45% 0.015 75);
+      --accent: oklch(48% 0.16 55);
+      --accent-dim: oklch(48% 0.16 55 / 0.08);
+      --line: oklch(85% 0.008 75);
+      --line-light: oklch(78% 0.01 75);
     }
-    [lang="zh"] { --font-display: 'Noto Serif SC', 'Space Grotesk', serif; --font-body: 'Noto Serif SC', 'Lora', serif; }
-
-    .lang-zh { display: none; }
-    .lang-en { display: inline; }
-    [lang="zh"] .lang-zh { display: inline; }
-    [lang="zh"] .lang-en { display: none; }
-    [lang="zh"] .block-zh { display: block; }
-    [lang="zh"] .block-en { display: none; }
-    .block-zh { display: none; }
-    .block-en { display: block; }
+    [lang="zh"] { --font-display: 'Noto Serif SC', 'Space Grotesk', serif; --font-body: 'Noto Serif SC', -apple-system, sans-serif; }
+    .lang-zh { display: none; } .lang-en { display: inline; }
+    [lang="zh"] .lang-zh { display: inline; } [lang="zh"] .lang-en { display: none; }
+    [lang="zh"] .block-zh { display: block; } [lang="zh"] .block-en { display: none; }
+    .block-zh { display: none; } .block-en { display: block; }
 
     * { margin: 0; padding: 0; box-sizing: border-box; }
     html { scroll-behavior: smooth; }
@@ -53,194 +49,213 @@
       font-family: var(--font-body);
       background: var(--bg);
       color: var(--fg);
-      line-height: 1.75;
-      transition: background .4s ease, color .4s ease;
+      line-height: 1.7;
+      transition: background .4s ease;
+      overflow-x: hidden;
     }
-    h1, h2, h3, h4, .nav, .tag, .meta, .nameplate, .top-btn, .skill-tag, .award-chip {
+    h1, h2, h3, h4, .nav, .tag, .stat-num, .top-btn, .skill-tag, .award-level {
       font-family: var(--font-display);
     }
     h1 {
-      font-size: clamp(2rem, 5vw, 3.2rem);
+      font-size: clamp(2.4rem, 6vw, 4rem);
       font-weight: 700;
-      letter-spacing: -.03em;
-      line-height: 1.15;
+      letter-spacing: -.035em;
+      line-height: 1.08;
       color: var(--fg-heading);
       text-wrap: balance;
     }
     h2 {
-      font-size: 1.5rem;
+      font-size: 1.6rem;
       font-weight: 600;
       letter-spacing: -.02em;
       color: var(--fg-heading);
-      margin-bottom: 1.8rem;
-      text-wrap: balance;
+      margin-bottom: 1.5rem;
     }
     h3 {
-      font-size: 1.05rem;
+      font-size: 1.1rem;
       font-weight: 600;
       color: var(--fg-heading);
       letter-spacing: -.01em;
     }
-    p { max-width: 66ch; }
+    p { max-width: 68ch; }
     a { color: var(--accent); text-decoration: none; }
     a:hover { text-decoration: underline; }
     ::selection { background: var(--accent-dim); color: var(--fg-heading); }
 
     .container { max-width: var(--max-w); margin: 0 auto; padding: 0 1.5rem; }
-    hr { border: none; border-top: 1px solid var(--line); margin: 3rem 0; }
 
     /* Top bar */
     .top-bar {
       position: fixed; top: 1.2rem; right: 1.5rem; z-index: 100;
-      display: flex; gap: .5rem;
+      display: flex; gap: .4rem;
     }
     .top-btn {
-      font-size: .8rem; font-weight: 500;
-      background: var(--bg-card); color: var(--fg);
-      border: 1px solid var(--line);
+      font-size: .78rem; font-weight: 500;
+      background: color-mix(in oklab, var(--bg-card) 80%, transparent);
+      backdrop-filter: blur(12px);
+      -webkit-backdrop-filter: blur(12px);
+      color: var(--fg); border: 1px solid var(--line);
       padding: .35rem .75rem;
-      border-radius: var(--radius);
+      border-radius: 20px;
       cursor: pointer;
       transition: background .2s, border .2s;
     }
     .top-btn:hover { border-color: var(--accent); }
-    .top-btn.active-lang { border-color: var(--accent); background: var(--accent-dim); }
 
-    nav { padding: 2rem 0 1.5rem; display: flex; gap: 1.6rem; flex-wrap: wrap; font-size: .85rem; font-weight: 500; }
-    nav a { color: var(--fg-muted); transition: color .2s; font-family: var(--font-display); }
+    /* Nav */
+    nav {
+      padding: 2rem 0 1rem;
+      display: flex; gap: 1.6rem; flex-wrap: wrap;
+      font-size: .82rem; font-weight: 500;
+      font-family: var(--font-display);
+    }
+    nav a { color: var(--fg-muted); transition: color .3s; }
     nav a:hover { color: var(--accent); text-decoration: none; }
 
-    /* Hero - nameplate style */
-    .hero { padding: 3.5rem 0 2.5rem; border-bottom: 1px solid var(--line); }
-    .hero h1 { margin-bottom: .5rem; }
-    .hero .tagline { font-size: 1.05rem; color: var(--fg-muted); max-width: 54ch; line-height: 1.6; }
-    .hero-meta { display: flex; flex-wrap: wrap; gap: .6rem 2rem; margin-top: 1.5rem; }
-    .hero-meta span, .hero-meta a { font-family: var(--font-display); font-size: .82rem; color: var(--fg-muted); }
-    .hero-meta a { color: var(--accent); }
-
-    section { padding: 2.5rem 0; }
-    .about-text { font-size: .98rem; line-height: 1.8; max-width: 66ch; }
-
-    /* Scholarship highlight */
-    .scholarship-box {
-      background: linear-gradient(135deg, var(--accent-dim) 0%, transparent 100%);
-      border: 1px solid var(--line);
-      border-radius: var(--radius);
-      padding: 2rem;
-      margin-bottom: 1.5rem;
+    /* Hero - full bleed style */
+    .hero {
+      min-height: 75vh;
+      display: flex; flex-direction: column; justify-content: center;
+      padding: 5rem 0 4rem;
+      position: relative;
     }
-    .scholarship-box .stat-row { display: flex; flex-wrap: wrap; gap: 2rem 3rem; margin-top: 1.2rem; }
-    .scholarship-box .stat { text-align: center; }
-    .scholarship-box .stat-num { font-size: 1.8rem; font-weight: 700; color: var(--accent); line-height: 1; font-family: var(--font-display); }
-    .scholarship-box .stat-label { font-size: .8rem; color: var(--fg-muted); margin-top: .15rem; }
+    .hero h1 { margin-bottom: .8rem; }
+    .hero .tagline {
+      font-size: 1.1rem; color: var(--fg-muted);
+      max-width: 54ch; line-height: 1.7;
+    }
+    .hero-meta { display: flex; flex-wrap: wrap; gap: .6rem 2rem; margin-top: 2rem; }
+    .hero-meta span, .hero-meta a { font-size: .85rem; color: var(--fg-muted); font-family: var(--font-display); }
+    .hero-meta a { color: var(--accent); }
+    .hero-scroll {
+      position: absolute; bottom: 1.5rem; left: 50%; transform: translateX(-50%);
+      font-size: .75rem; color: var(--fg-muted); font-family: var(--font-display);
+      letter-spacing: .08em; text-transform: uppercase;
+      opacity: .4; animation: float 2.5s ease-in-out infinite;
+    }
+    @keyframes float { 0%,100%{transform:translateX(-50%) translateY(0)} 50%{transform:translateX(-50%) translateY(-6px)} }
 
-    /* Project cards - Information Architects style */
-    .project-grid { display: grid; gap: 1rem; }
+    /* Sections */
+    section { padding: 4rem 0; }
+
+    /* Scroll reveal */
+    .reveal {
+      opacity: 0; transform: translateY(24px);
+      transition: opacity .8s cubic-bezier(.22,1,.36,1), transform .8s cubic-bezier(.22,1,.36,1);
+    }
+    .reveal.visible { opacity: 1; transform: translateY(0); }
+
+    /* Stats row - Apple style */
+    .stats-row {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(120px, 1fr));
+      gap: 1.5rem;
+      padding: 2.5rem 0;
+    }
+    .stat-item { text-align: center; }
+    .stat-num { font-size: 2.4rem; font-weight: 700; color: var(--accent); line-height: 1; }
+    .stat-label { font-size: .78rem; color: var(--fg-muted); margin-top: .3rem; }
+
+    /* Divider */
+    .divider { border: none; height: 1px; background: var(--line); margin: 0; }
+
+    /* Photo grid */
+    .photo-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: .8rem;
+      margin-top: 1.5rem;
+    }
+    .photo-grid .wide { grid-column: 1 / -1; }
+    .photo-grid img {
+      width: 100%; height: 200px; object-fit: cover;
+      border-radius: var(--radius-md);
+      border: 1px solid var(--line);
+      transition: transform .4s ease, border .3s;
+    }
+    .photo-grid img:hover { transform: scale(1.02); border-color: var(--accent-dim); }
+
+    /* Project cards */
+    .project-grid { display: grid; gap: .8rem; }
     .project-card {
       background: var(--bg-card);
       border: 1px solid var(--line);
-      border-radius: var(--radius);
+      border-radius: var(--radius-md);
       padding: 1.6rem;
-      transition: border .2s;
+      transition: border .3s, background .3s;
     }
-    .project-card:hover { border-color: var(--accent-dim); }
-    .project-card .meta { font-size: .78rem; color: var(--accent); font-weight: 500; text-transform: uppercase; letter-spacing: .04em; margin-bottom: .3rem; font-family: var(--font-display); }
+    .project-card:hover {
+      border-color: var(--accent-dim);
+      background: var(--bg-alt);
+    }
+    .project-card .meta { font-size: .72rem; color: var(--accent); font-weight: 500; text-transform: uppercase; letter-spacing: .06em; margin-bottom: .3rem; font-family: var(--font-display); }
     .project-card h3 { margin-bottom: .2rem; }
-    .project-card .org { font-size: .88rem; color: var(--fg-muted); margin-bottom: .7rem; }
-    .project-card p { font-size: .9rem; color: var(--fg-muted); line-height: 1.7; }
+    .project-card .org { font-size: .85rem; color: var(--fg-muted); margin-bottom: .6rem; }
+    .project-card p { font-size: .88rem; color: var(--fg-muted); line-height: 1.7; }
+
+    /* Awards */
+    .award-group { margin-bottom: 1.5rem; }
+    .award-group h3 { font-size: .9rem; margin-bottom: .5rem; color: var(--accent); }
+    .award-item { font-size: .82rem; padding: .4rem 0 .4rem .8rem; color: var(--fg-muted); border-left: 2px solid var(--line-light); transition: border .2s; }
+    .award-item:hover { border-left-color: var(--accent); }
+    .award-item .award-level { display: inline-block; font-size: .65rem; font-weight: 600; background: var(--accent-dim); color: var(--accent); padding: .08rem .4rem; border-radius: 3px; margin-right: .35rem; }
 
     /* Timeline */
-    .timeline { position: relative; padding-left: 2rem; }
-    .timeline::before {
-      content: ''; position: absolute; left: .5rem; top: .5rem; bottom: .5rem;
-      width: 1px; background: var(--line);
-    }
+    .timeline { position: relative; padding-left: 1.8rem; }
+    .timeline::before { content: ''; position: absolute; left: .4rem; top: .5rem; bottom: .5rem; width: 1px; background: var(--line); }
     .tl-item { position: relative; padding: 1rem 0 1rem 1.5rem; }
-    .tl-item::before {
-      content: ''; position: absolute; left: -1.55rem; top: 1.4rem;
-      width: 10px; height: 10px; border-radius: 50%;
-      background: var(--accent); border: 2px solid var(--bg);
-    }
-    .tl-item .year { font-family: var(--font-display); font-size: .82rem; font-weight: 600; color: var(--accent); }
-    .tl-item .tl-content { font-size: .9rem; color: var(--fg-muted); margin-top: .15rem; max-width: 100%; }
+    .tl-item::before { content: ''; position: absolute; left: -1.45rem; top: 1.4rem; width: 8px; height: 8px; border-radius: 50%; background: var(--accent); border: 2px solid var(--bg); }
+    .tl-item .year { font-family: var(--font-display); font-size: .8rem; font-weight: 600; color: var(--accent); }
+    .tl-item p { font-size: .88rem; color: var(--fg-muted); margin-top: .1rem; max-width: 100%; }
 
-    /* Photo gallery */
-    .photo-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(200px, 1fr)); gap: .8rem; margin-top: 1rem; }
-    .photo-grid img { width: 100%; height: 160px; object-fit: cover; border-radius: var(--radius); border: 1px solid var(--line); }
-
-    /* Awards tree */
-    .award-group { margin-bottom: 1.8rem; }
-    .award-group h3 { font-size: .95rem; margin-bottom: .6rem; color: var(--accent); }
-    .award-list { display: grid; gap: .5rem; }
-    .award-item {
-      font-size: .85rem; padding: .55rem .8rem;
-      border-left: 2px solid var(--line-light);
-      color: var(--fg-muted);
-      transition: border .2s;
-    }
-    .award-item:hover { border-left-color: var(--accent); }
-    .award-item .award-level { font-family: var(--font-display); display: inline-block; font-size: .7rem; font-weight: 500; background: var(--accent-dim); color: var(--accent); padding: .1rem .4rem; border-radius: 3px; margin-right: .4rem; }
-
-    /* Experience */
-    .exp-item {
-      display: grid; grid-template-columns: 1fr 5rem; gap: .3rem 1.5rem;
-      padding: 1rem 0; border-bottom: 1px solid var(--line);
-    }
-    .exp-item:last-child { border: none; }
-    .exp-item .year { grid-column: 2; font-family: var(--font-display); font-size: .85rem; color: var(--fg-muted); text-align: right; }
-    .exp-item h3 { grid-column: 1; }
-    .exp-item .org, .exp-item p { grid-column: 1 / -1; }
-    .exp-item .org { font-size: .88rem; color: var(--fg-muted); }
-    .exp-item p { font-size: .88rem; color: var(--fg-muted); max-width: 100%; }
-
-    /* Publications */
-    .pub-list { display: grid; gap: .8rem; }
-    .pub-item { padding: .8rem 1.2rem; border-left: 2px solid var(--accent); background: var(--bg-card); border-radius: 0 var(--radius) var(--radius) 0; }
-    .pub-item p { font-size: .88rem; max-width: 100%; }
-    .pub-item .venue { color: var(--accent); font-size: .8rem; font-style: italic; }
+    /* Papers */
+    .papers { display: grid; gap: .6rem; }
+    .paper-item { padding: .6rem 1rem; border-left: 2px solid var(--accent); font-size: .85rem; color: var(--fg-muted); transition: border .2s, background .2s; border-radius: 0 var(--radius-sm) var(--radius-sm) 0; }
+    .paper-item:hover { background: var(--bg-card); border-left-color: var(--accent); }
+    .paper-item em { color: var(--accent); font-style: italic; font-size: .8rem; }
 
     /* Blog */
-    .blog-grid { display: grid; gap: 1rem; }
+    .blog-grid { display: grid; gap: .8rem; }
     .blog-card {
       display: block; text-decoration: none; color: inherit;
       background: var(--bg-card); border: 1px solid var(--line);
-      border-radius: var(--radius); padding: 1.4rem;
-      transition: border .2s;
+      border-radius: var(--radius-md); padding: 1.4rem;
+      transition: border .3s, background .3s;
     }
-    .blog-card:hover { border-color: var(--accent-dim); }
-    .blog-card .date { font-family: var(--font-display); font-size: .76rem; color: var(--fg-muted); margin-bottom: .2rem; }
+    .blog-card:hover { border-color: var(--accent-dim); background: var(--bg-alt); text-decoration: none; }
+    .blog-card .date { font-family: var(--font-display); font-size: .74rem; color: var(--fg-muted); margin-bottom: .2rem; }
     .blog-card h3 { margin-bottom: .3rem; }
-    .blog-card p { font-size: .88rem; color: var(--fg-muted); max-width: 100%; }
-    .blog-card .tag { display: inline-block; font-size: .7rem; font-weight: 500; background: var(--accent-dim); color: var(--accent); padding: .15rem .5rem; margin-top: .5rem; border-radius: 3px; font-family: var(--font-display); }
+    .blog-card p { font-size: .86rem; color: var(--fg-muted); max-width: 100%; }
+    .blog-card .tag { display: inline-block; font-size: .68rem; font-weight: 500; background: var(--accent-dim); color: var(--accent); padding: .12rem .45rem; margin-top:.4rem; border-radius: 3px; font-family: var(--font-display); }
 
     /* Skills */
-    .skills-grid { display: flex; flex-wrap: wrap; gap: .4rem; }
-    .skill-tag { font-size: .82rem; font-weight: 500; padding: .25rem .7rem; border: 1px solid var(--line-light); border-radius: 3px; color: var(--fg-muted); transition: border .2s, color .2s; }
+    .skills-grid { display: flex; flex-wrap: wrap; gap: .35rem; }
+    .skill-tag { font-size: .8rem; font-weight: 500; padding: .2rem .65rem; border: 1px solid var(--line-light); border-radius: 20px; color: var(--fg-muted); transition: border .2s, color .2s; }
     .skill-tag:hover { border-color: var(--accent); color: var(--accent); }
 
-    /* Social / extracurricular */
-    .activity-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(180px, 1fr)); gap: .6rem; }
-    .activity-item { font-size: .85rem; color: var(--fg-muted); padding: .4rem .6rem; border: 1px solid var(--line); border-radius: 3px; }
+    /* Activities */
+    .act-grid { display: flex; flex-wrap: wrap; gap: .4rem; }
+    .act-item { font-size: .8rem; color: var(--fg-muted); padding: .25rem .6rem; border: 1px solid var(--line); border-radius: 20px; }
 
-    /* Contact */
-    .contact-grid { display: flex; flex-wrap: wrap; gap: 1.5rem 2.5rem; }
-    .contact-item { font-family: var(--font-display); font-size: .9rem; }
-    .contact-item .label { display: block; font-size: .7rem; font-weight: 500; text-transform: uppercase; letter-spacing: .06em; color: var(--fg-muted); margin-bottom: .15rem; }
-
-    footer { margin-top: 3rem; padding: 2rem 0 3rem; border-top: 1px solid var(--line); text-align: center; font-size: .8rem; color: var(--fg-muted); }
+    /* Footer */
+    footer {
+      padding: 3rem 0 4rem;
+      border-top: 1px solid var(--line);
+      text-align: center; font-size: .8rem; color: var(--fg-muted);
+    }
+    footer a { color: var(--fg-muted); }
+    footer a:hover { color: var(--accent); }
 
     @media (max-width: 640px) {
-      h1 { font-size: 1.7rem; }
-      h2 { font-size: 1.25rem; }
-      nav { gap: .8rem; font-size: .8rem; }
-      .hero { padding: 2rem 0; }
-      section { padding: 1.8rem 0; }
-      .exp-item { grid-template-columns: 1fr; }
-      .exp-item .year { grid-column: 1; text-align: left; }
-      .top-bar { top: .6rem; right: .6rem; gap: .35rem; }
-      .top-btn { font-size: .72rem; padding: .25rem .55rem; }
-      .photo-grid { grid-template-columns: repeat(auto-fill, minmax(140px, 1fr)); }
-      .activity-grid { grid-template-columns: repeat(auto-fill, minmax(150px, 1fr)); }
+      h1 { font-size: 2rem; }
+      h2 { font-size: 1.3rem; }
+      .hero { min-height: 60vh; padding: 3rem 0; }
+      .photo-grid { grid-template-columns: 1fr; }
+      .photo-grid img { height: 160px; }
+      section { padding: 2.5rem 0; }
+      .stats-row { grid-template-columns: repeat(3, 1fr); gap: 1rem; }
+      .top-bar { top: .5rem; right: .6rem; }
+      .top-btn { font-size: .7rem; padding: .25rem .5rem; }
     }
   </style>
 </head>
@@ -254,241 +269,200 @@
 <div class="container">
 
 <nav>
-  <a href="#scholarship"><span class="block-zh">奖学金</span><span class="block-en">Scholarship</span></a>
+  <a href="#about"><span class="block-zh">概述</span><span class="block-en">About</span></a>
   <a href="#research"><span class="block-zh">研究</span><span class="block-en">Research</span></a>
-  <a href="#timeline"><span class="block-zh">历程</span><span class="block-en">Timeline</span></a>
   <a href="#awards"><span class="block-zh">奖项</span><span class="block-en">Awards</span></a>
   <a href="#blog"><span class="block-zh">博客</span><span class="block-en">Blog</span></a>
   <a href="#contact"><span class="block-zh">联系</span><span class="block-en">Contact</span></a>
 </nav>
 
 <header class="hero">
-  <h1><span class="block-zh">卢家勋</span><span class="block-en">Jiaxun Lu</span></h1>
-  <p class="tagline block-zh">浙江大学海洋技术与工程博士研究生 · 随钻泥浆高速信息遥传 · 子辰奖学金候选人</p>
-  <p class="tagline block-en">PhD candidate at Zhejiang University · Mud pulse telemetry · Zichen Scholarship Candidate</p>
-  <div class="hero-meta">
+  <h1 class="reveal"><span class="block-zh">卢家勋</span><span class="block-en">Jiaxun Lu</span></h1>
+  <p class="tagline reveal" style="transition-delay:.1s;">
+    <span class="block-zh">浙江大学博士研究生 · 研究随钻泥浆遥传与水声通信中的信号处理</span>
+    <span class="block-en">PhD candidate at Zhejiang University · Signal processing for mud pulse telemetry and underwater acoustic communication</span>
+  </p>
+  <div class="hero-meta reveal" style="transition-delay:.2s;">
     <span>📍 <span class="lang-zh">杭州</span><span class="lang-en">Hangzhou</span></span>
     <span>🎓 <span class="lang-zh">浙江大学 · 海洋学院</span><span class="lang-en">ZJU · Ocean College</span></span>
     <a href="mailto:jiaxun101@outlook.com">jiaxun101@outlook.com</a>
     <a href="https://github.com/ShawnJLewis" target="_blank">GitHub</a>
   </div>
+  <div class="hero-scroll block-zh">向下滚动</div>
+  <div class="hero-scroll block-en">SCROLL</div>
 </header>
 
-<!-- Scholarship Highlight -->
-<section id="scholarship">
-  <h2 class="block-zh">子辰奖学金 · 答辩概要</h2>
-  <h2 class="block-en">Zichen Scholarship · Defense Summary</h2>
+<div class="divider"></div>
 
-  <div class="scholarship-box">
-    <p class="block-zh" style="font-size:.95rem;line-height:1.8;">
+<!-- Stats bar -->
+<section>
+  <div class="stats-row reveal">
+    <div class="stat-item"><div class="stat-num">5</div><div class="stat-label block-zh">SCI/EI 论文</div><div class="stat-label block-en">Papers</div></div>
+    <div class="stat-item"><div class="stat-num">3</div><div class="stat-label block-zh">授权专利</div><div class="stat-label block-en">Patents</div></div>
+    <div class="stat-item"><div class="stat-num">600+</div><div class="stat-label block-zh">攻关时长 (h)</div><div class="stat-label block-en">R&amp;D Hours</div></div>
+    <div class="stat-item"><div class="stat-num">17</div><div class="stat-label block-zh">竞赛获奖</div><div class="stat-label block-en">Awards</div></div>
+    <div class="stat-item"><div class="stat-num">2</div><div class="stat-label block-zh">软件著作权</div><div class="stat-label block-en">Copyrights</div></div>
+  </div>
+</section>
+
+<div class="divider"></div>
+
+<!-- About -->
+<section id="about">
+  <h2 class="reveal"><span class="block-zh">关于</span><span class="block-en">About</span></h2>
+  <p class="reveal" style="transition-delay:.1s;">
+    <span class="block-zh">
       中共党员，浙江大学海洋技术与工程博士研究生。多年从事<strong>随钻泥浆高速信息遥传</strong>研究，参与国家重点研发计划。
-      发表 SCI/EI 论文 <strong>5 篇</strong>，授权发明专利 <strong>3 项</strong>（另提交合作单位软件著作权 2 项、专利 3 篇）。
-      主持开发泥浆脉冲实时处理上位机软件，累计实验 <strong>100 余天</strong>、攻关 <strong>600 余小时</strong>。
-      2024年创立"探海神针"团队，累计获得各级各类奖项 <strong>17 项</strong>（含省一等奖、校金奖等）。
-    </p>
-    <p class="block-en" style="font-size:.95rem;line-height:1.8;">
-      CPC member, PhD candidate at Zhejiang University. Years of research on <strong>high-speed mud pulse telemetry</strong> for downhole communication, participating in National Key R&amp;D Program. <strong>5</strong> SCI/EI papers, <strong>3</strong> authorized patents (plus 2 software copyrights and 3 patents pending). Led real-time mud pulse processing software development — <strong>100+</strong> days of field experiments, <strong>600+</strong> hours of R&amp;D milestones. Founded "Tanhai Shenzhen" team in 2024, winning <strong>17</strong> awards at all levels.
-    </p>
-    <div class="stat-row">
-      <div class="stat"><div class="stat-num">5</div><div class="stat-label block-zh">SCI/EI论文</div><div class="stat-label block-en">Papers</div></div>
-      <div class="stat"><div class="stat-num">3</div><div class="stat-label block-zh">授权专利</div><div class="stat-label block-en">Patents</div></div>
-      <div class="stat"><div class="stat-num">100+</div><div class="stat-label block-zh">实验天数</div><div class="stat-label block-en">Field Days</div></div>
-      <div class="stat"><div class="stat-num">600+</div><div class="stat-label block-zh">攻关小时</div><div class="stat-label block-en">R&amp;D Hours</div></div>
-      <div class="stat"><div class="stat-num">17</div><div class="stat-label block-zh">获奖总数</div><div class="stat-label block-en">Awards</div></div>
-    </div>
-  </div>
-
-  <div class="photo-grid">
-    <img src="images/photo-field-experiment.jpeg" alt="Field experiment" loading="lazy">
-    <img src="images/photo-lab-software.jpeg" alt="Software development" loading="lazy">
-    <img src="images/photo-activity-group.jpeg" alt="Team activities" loading="lazy">
+      研究方向涵盖自适应信号处理、噪声对消与实时嵌入式系统，从数千米深的钻井泥浆到近海水声信道，致力于在极端通信环境中还原信号的本来面貌。
+    </span>
+    <span class="block-en">
+      CPC member, PhD candidate at Zhejiang University. Years of research on <strong>high-speed mud pulse telemetry</strong> for downhole communication, participating in National Key R&amp;D Program. Expertise in adaptive signal processing, noise cancellation, and real-time embedded systems.
+    </span>
+  </p>
+  <div class="photo-grid reveal" style="transition-delay:.2s;">
+    <img class="wide" src="images/photo-field-experiment.jpg" alt="Field experiment" loading="lazy">
+    <img src="images/photo-lab-software.jpg" alt="Software development" loading="lazy">
+    <img src="images/photo-activity-group.jpg" alt="Team activity" loading="lazy">
   </div>
 </section>
 
-<hr>
-
-<!-- Timeline -->
-<section id="timeline">
-  <h2 class="block-zh">成长轨迹</h2>
-  <h2 class="block-en">Timeline</h2>
-  <div class="timeline">
-    <div class="tl-item">
-      <div class="year">2022</div>
-      <p class="tl-content block-zh">潜心研究，锚定国产脉冲遥传通信设备无法满足日益增长的石油钻井需求这一核心问题。</p>
-      <p class="tl-content block-en">Focused on the core problem: domestic mud pulse telemetry equipment cannot meet the growing demands of oil drilling.</p>
-    </div>
-    <div class="tl-item">
-      <div class="year">2024</div>
-      <p class="tl-content block-zh">创新启程，发表研究成果，作为骨干参与创新创业竞赛，累积经验。创立"探海神针"团队。</p>
-      <p class="tl-content block-en">Innovation phase: published research results, led innovation competitions, gained entrepreneurial experience. Founded "Tanhai Shenzhen" team.</p>
-    </div>
-    <div class="tl-item">
-      <div class="year">2025</div>
-      <p class="tl-content block-zh">厚积薄发，多次路演获评委高度评价。斩获校级金奖、省级一等奖、"创青春"浙江省总冠军。</p>
-      <p class="tl-content block-en">Breakout year: multiple roadshows with high praise from judges. Won university gold, provincial 1st prize, and "Chuang Qingchun" Zhejiang Grand Champion.</p>
-    </div>
-    <div class="tl-item">
-      <div class="year">2025 +</div>
-      <p class="tl-content block-zh">薪火相传，指导海院学子获浙大蒲公英银奖、浙江省国创铜奖、浙江省"创青春"总冠军。</p>
-      <p class="tl-content block-en">Giving back: mentoring Ocean College students to win ZJU Dandelion Silver, provincial innovation bronze, and "Chuang Qingchun" Grand Champion.</p>
-    </div>
-  </div>
-</section>
-
-<hr>
+<div class="divider"></div>
 
 <!-- Research -->
 <section id="research">
-  <h2 class="block-zh">研究项目</h2>
-  <h2 class="block-en">Research Projects</h2>
-  <div class="project-grid">
+  <h2 class="reveal"><span class="block-zh">研究项目</span><span class="block-en">Research</span></h2>
+  <div class="project-grid reveal" style="transition-delay:.1s;">
     <div class="project-card">
       <div class="meta block-zh">2023–2026 · 项目骨干</div>
       <div class="meta block-en">2023–2026 · Core Member</div>
-      <h3 class="block-zh">随钻高速信息传输关键技术</h3>
-      <h3 class="block-en">High-Speed Downhole Information Transmission</h3>
+      <h3 class="block-zh">随钻高速信息传输</h3>
+      <h3 class="block-en">High-Speed Downhole Transmission</h3>
       <div class="org block-zh">中石化"揭榜挂帅"项目</div>
       <div class="org block-en">SINOPEC "Jiebai Guashuai" Project</div>
-      <p class="block-zh">MATLAB 多源泵噪声模型 + 卡尔曼滤波与 LMS/RLS 自适应滤波，噪声重构精度 &gt;99%，信噪比提升 15dB+。主导 App Designer 实时处理软件——1s 延迟，效率提升 90%+。"界面美观、操作直观"评价。</p>
-      <p class="block-en">MATLAB multi-source pump noise model + Kalman/LMS/RLS adaptive filtering: &gt;99% noise reconstruction accuracy, 15dB+ SNR improvement. Led App Designer real-time software — 1s display latency, 90%+ efficiency gain.</p>
+      <p class="block-zh">MATLAB 多源泵噪声模型 + 卡尔曼/LMS/RLS 自适应滤波，噪声重构精度 &gt;99%，信噪比提升 15dB+。主导 App Designer 实时处理软件开发——1s 延迟，效率提升 90%+。</p>
+      <p class="block-en">MATLAB multi-source noise model + Kalman/LMS/RLS adaptive filtering: &gt;99% accuracy, 15dB+ SNR. Led App Designer real-time software: 1s display latency, 90%+ efficiency gain.</p>
     </div>
-    <div class="project-card">
+    <div class="project-card" style="transition-delay:.1s;">
       <div class="meta block-zh">2022–2024 · 算法开发</div>
       <div class="meta block-en">2022–2024 · Algorithm Dev</div>
-      <h3 class="block-zh">高速水声通信技术</h3>
+      <h3 class="block-zh">高速水声通信</h3>
       <h3 class="block-en">Underwater Acoustic Communication</h3>
-      <div class="org">国家杰出青年科学基金项目 / National Science Fund</div>
-      <p class="block-zh">STFT + 陷波滤波 + MVDR 波束成形抑制推进器噪声，SNR 提升 10dB+，误码率低于 1e-5。Verilog/FPGA 设计 SNR 自适应帧同步，舟山海试零丢帧。</p>
-      <p class="block-en">STFT + notch filtering + MVDR beamforming suppressed thruster noise: 10dB+ SNR, BER below 1e-5. Verilog/FPGA SNR-adaptive frame sync, zero frame-miss in 5km sea trial.</p>
+      <div class="org">国家杰出青年科学基金 / National Science Fund</div>
+      <p class="block-zh">STFT + 陷波滤波 + MVDR 波束成形，SNR 提升 10dB+，误码率低于 1e-5。Verilog/FPGA 设计 SNR 自适应帧同步，舟山海试零丢帧。</p>
+      <p class="block-en">STFT + notch filtering + MVDR beamforming: 10dB+ SNR, BER below 1e-5. Verilog/FPGA SNR-adaptive frame sync, zero frame-miss in sea trial.</p>
     </div>
-    <div class="project-card">
-      <div class="meta block-zh">2020–2021 · 队长</div>
-      <div class="meta block-en">2020–2021 · Team Lead</div>
+    <div class="project-card" style="transition-delay:.2s;">
+      <div class="meta">2020–2021 · <span class="lang-zh">队长</span><span class="lang-en">Team Lead</span></div>
       <h3 class="block-zh">水下视觉导航机器人</h3>
       <h3 class="block-en">Visual Navigation Robot</h3>
-      <div class="org block-zh">全国水下机器人竞赛</div>
-      <div class="org block-en">National Underwater Robot Competition</div>
-      <p class="block-zh">Linux + STM32 + OpenCV + Python OCR，PID 电机控制实现水下巡线/避障/目标识别——<strong>全国一等奖</strong>。</p>
-      <p class="block-en">Linux + STM32 + OpenCV + Python OCR, PID motor control for underwater line-following, obstacle avoidance, target recognition — <strong>National 1st Prize</strong>.</p>
+      <div class="org block-zh">全国水下机器人竞赛 · 全国一等奖</div>
+      <div class="org block-en">National Underwater Robot Competition · 1st Prize</div>
+      <p class="block-zh">Linux + STM32 + OpenCV + Python OCR + PID 控制，实现水下巡线/避障/目标识别。</p>
+      <p class="block-en">Linux + STM32 + OpenCV + Python OCR + PID control for underwater navigation.</p>
     </div>
   </div>
 </section>
 
-<hr>
+<div class="divider"></div>
 
-<!-- Awards (17 items) -->
+<!-- Timeline & Awards -->
 <section id="awards">
-  <h2 class="block-zh">竞赛获奖 · 17项</h2>
-  <h2 class="block-en">Competition Awards · 17 Total</h2>
+  <h2 class="reveal"><span class="block-zh">成长与奖项</span><span class="block-en">Journey &amp; Awards</span></h2>
 
-  <div class="award-group">
-    <h3 class="block-zh">🥇 国家级/全国级</h3>
-    <h3 class="block-en">🥇 National Level</h3>
-    <div class="award-list">
-      <div class="award-item"><span class="award-level">🥇 一等奖</span>第三届"海蓝杯"声学应用研究与设计大赛 · 2024</div>
-      <div class="award-item"><span class="award-level">🥉 三等奖</span>中国光华科技基金会"崖州湾杯"研究生创新创业大赛 · 2025</div>
+  <div class="timeline reveal" style="transition-delay:.1s;">
+    <div class="tl-item">
+      <div class="year">2022</div>
+      <p class="block-zh">专注研究，参与"揭榜挂帅"项目</p>
+      <p class="block-en">Focused research on mud pulse telemetry, joined the SINOPEC project.</p>
+    </div>
+    <div class="tl-item">
+      <div class="year">2024</div>
+      <p class="block-zh">创立"探海神针"团队，发表论文并参与创新创业竞赛</p>
+      <p class="block-en">Founded "Tanhai Shenzhen" team, published research, entered innovation competitions.</p>
+    </div>
+    <div class="tl-item">
+      <div class="year">2025</div>
+      <p class="block-zh">斩获"创青春"浙江省总冠军，指导海院学子获得多项奖项</p>
+      <p class="block-en">Won "Chuang Qingchun" Zhejiang Grand Champion, mentored Ocean College students.</p>
     </div>
   </div>
 
-  <div class="award-group">
-    <h3 class="block-zh">🥇 省级</h3>
-    <h3 class="block-en">🥇 Provincial Level</h3>
-    <div class="award-list">
-      <div class="award-item"><span class="award-level">🏆 总冠军</span>"创青春"浙江省青年创新创业大赛 · 2025</div>
-      <div class="award-item"><span class="award-level">🥇 一等奖</span>浙江省海洋知识创新竞赛（涉海竞赛）· 2024</div>
-      <div class="award-item"><span class="award-level">🥉 铜奖</span>浙江省国际大学生创新大赛（原互联网+）· 2024</div>
-      <div class="award-item"><span class="award-level">🥉 铜奖</span>创青春浙江省青年创新创业大赛 · 2024</div>
-      <div class="award-item"><span class="award-level">🥉 铜奖</span>浙江省国际大学生创新大赛 2025（互联网+）· 2025</div>
+  <div class="award-group reveal" style="transition-delay:.2s;margin-top:2rem;">
+    <h3><span class="block-zh">🏆 竞赛获奖（17项）</span><span class="block-en">🏆 Competition Awards (17)</span></h3>
+    <div style="display:grid;gap:.3rem;">
+      <div class="award-item"><span class="award-level">🥇</span>第三届"海蓝杯"声学应用研究与设计大赛 · 一等奖 · 国家级 · 2024</div>
+      <div class="award-item"><span class="award-level">🥇</span>"创青春"浙江省青年创新创业大赛 · 总冠军 · 省级 · 2025</div>
+      <div class="award-item"><span class="award-level">🥇</span>浙江省海洋知识创新竞赛 · 一等奖 · 省级 · 2024</div>
+      <div class="award-item"><span class="award-level">🥇</span>"创客中国"浙江赛区舟山高校组专题赛 · 一等奖 · 市级 · 2024</div>
+      <div class="award-item"><span class="award-level">🥇</span>舟山群岛新区在校大学生创新创业大赛 · 一等奖 · 市级 · 2025</div>
+      <div class="award-item"><span class="award-level">🥇</span>浙江大学第十七届"蒲公英"大学生创新大赛 · 金奖 · 校级 · 2025</div>
+      <div class="award-item"><span class="award-level">🥈</span>浙江大学"蒲公英"创新大赛（深蓝智联/智脉通联）· 银奖×2 · 2025</div>
+      <div class="award-item"><span class="award-level">🥉</span>崖州湾杯研究生创新创业大赛 · 三等奖 · 全国级 · 2025</div>
+      <div class="award-item"><span class="award-level">🥉</span>省国际大学生创新大赛（互联网+）· 铜奖×3 · 2024–2025</div>
+      <div class="award-item"><span class="award-level">🥉</span>舟山群岛第十届创新创业大赛 · 三等奖 · 2025</div>
+      <div class="award-item"><span class="award-level">🥉</span>舟山市青年创新创效大赛 · 铜奖 · 2025</div>
+      <div class="award-item"><span class="award-level">🥉</span>浙江大学"蒲公英"/"诸暨杯"/能源装备设计大赛 · 三等奖×3 · 2024</div>
     </div>
   </div>
 
-  <div class="award-group">
-    <h3 class="block-zh">🥇 市级</h3>
-    <h3 class="block-en">🥇 City Level</h3>
-    <div class="award-list">
-      <div class="award-item"><span class="award-level">🥇 一等奖</span>"创客中国"浙江赛区·舟山高校组专题赛 · 2024</div>
-      <div class="award-item"><span class="award-level">🥇 一等奖</span>舟山群岛新区在校大学生创新创业大赛 · 2025</div>
-      <div class="award-item"><span class="award-level">🥉 铜奖</span>舟山市青年创新创效大赛 · 2025</div>
-      <div class="award-item"><span class="award-level">🥉 三等奖</span>舟山群岛第十届创新创业大赛总决赛 · 2025</div>
-    </div>
-  </div>
-
-  <div class="award-group">
-    <h3 class="block-zh">🥇 校级</h3>
-    <h3 class="block-en">🥇 University Level</h3>
-    <div class="award-list">
-      <div class="award-item"><span class="award-level">🥇 金奖</span>浙江大学第十七届"蒲公英"大学生创新大赛（探海神针）· 2025</div>
-      <div class="award-item"><span class="award-level">🥈 银奖</span>浙江大学第十七届"蒲公英"大学生创新大赛（深蓝智联）· 2025</div>
-      <div class="award-item"><span class="award-level">🥈 银奖</span>浙江大学第十七届"蒲公英"大学生创新大赛（智脉通联）· 2025</div>
-      <div class="award-item"><span class="award-level">🥉 三等奖</span>浙江大学第十六届"蒲公英"大学生创业大赛 · 2024</div>
-      <div class="award-item"><span class="award-level">🥉 三等奖</span>浙江大学管理学院"诸暨杯"创新创业大赛（初创组）· 2024</div>
-      <div class="award-item"><span class="award-level">🥉 三等奖</span>第十一届中国研究生能源装备创新设计大赛校内赛 · 2024</div>
-    </div>
+  <div class="photo-grid reveal" style="transition-delay:.3s;">
+    <img src="images/photo-competition.jpg" alt="Competition" loading="lazy">
+    <img src="images/photo-competition-award.jpg" alt="Award ceremony" loading="lazy">
+    <img class="wide" src="images/photo-ending-scene.jpg" alt="Team" loading="lazy">
   </div>
 </section>
 
-<hr>
+<div class="divider"></div>
 
-<!-- Social & Extracurricular -->
 <section>
-  <h2 class="block-zh">社会活动与服务</h2>
-  <h2 class="block-en">Social &amp; Service</h2>
-  <div class="activity-grid">
-    <div class="activity-item">中共党员 / CPC Member</div>
-    <div class="activity-item"><span class="lang-zh">全部学年思政考核优秀</span><span class="lang-en">All Years Excellent (Moral Eval)</span></div>
-    <div class="activity-item"><span class="lang-zh">浙江大学二星级志愿者</span><span class="lang-en">ZJU 2-Star Volunteer</span></div>
-    <div class="activity-item"><span class="lang-zh">浙江大学优秀团干部</span><span class="lang-en">ZJU Outstanding League Cadre</span></div>
-    <div class="activity-item"><span class="lang-zh">浙江大学优秀研究生</span><span class="lang-en">ZJU Outstanding Graduate</span></div>
-    <div class="activity-item">🏓 海洋学院乒乓球赛八强</div>
-    <div class="activity-item">🎯 <span class="lang-zh">浙大运动会标枪项目</span><span class="lang-en">Javelin, ZJU Sports Meet</span></div>
-    <div class="activity-item">🏃 舟山/浙大小马拉松</div>
-    <div class="activity-item">🌱 求是农场蔬菜栽培</div>
-    <div class="activity-item"><span class="lang-zh">第七届海洋技术大会参展受访</span><span class="lang-en">OCEANS 2024 Exhibitor</span></div>
-    <div class="activity-item"><span class="lang-zh">多次获"项目突出贡献奖"</span><span class="lang-en">Project Contribution Award</span></div>
-    <div class="activity-item">🎭 文琴舞蹈团舟山专场</div>
-    <div class="activity-item">🎪 海洋学院跨年迎新晚会</div>
-    <div class="activity-item">🎂 海洋学院工会生日会</div>
-  </div>
-  <div class="photo-grid" style="margin-top:1.2rem;">
-    <img src="images/photo-competition.jpeg" alt="Competition" loading="lazy">
-    <img src="images/photo-competition-award.jpeg" alt="Award ceremony" loading="lazy">
-    <img src="images/photo-ending-scene.jpeg" alt="Team" loading="lazy">
+  <h2 class="reveal"><span class="block-zh">论文与专利</span><span class="block-en">Publications</span></h2>
+  <div class="papers reveal" style="transition-delay:.1s;">
+    <div class="paper-item">J. Lu, et al. "Memoryless Continuous-Phase Chirp Spread Spectrum for Mud Pulse Telemetry." <em>ICICSP 2024</em></div>
+    <div class="paper-item">J. Lu, et al. "Recursive Bayesian Inference for Structured Harmonic Interference Cancellation." <em>ICFSP 2026</em> (Accepted)</div>
+    <div class="paper-item">Z. Sha, J. Zhu, J. Lu, et al. "Newtonized sparse channel estimation..." <em>Geoenergy Science and Engineering</em>, 2025</div>
+    <div class="paper-item">Y. Yuan, et al. "Topology Optimization..." <em>OCEANS 2025 Brest</em></div>
+    <div class="paper-item">Y. Lu, J. Lu, et al. "An Array Calibration Method..." <em>OCEANS 2024</em></div>
+    <div class="paper-item">Z. Sha, et al. "Interference Cancellation for Magnetometers in ROVs." <em>IEEE Sensors Journal</em>, 2023</div>
+    <div class="paper-item" style="border-left-color:var(--line-light);">🌟 <span class="lang-zh">自适应数据压缩方法及设备（CN120357909A）· 2025</span><span class="lang-en">Adaptive Data Compression (CN120357909A) · 2025</span></div>
+    <div class="paper-item" style="border-left-color:var(--line-light);">🌟 <span class="lang-zh">无刷直流电机磁干扰消除方法（CN114499057A）· 2022</span><span class="lang-en">Brushless DC Motor EMI Cancellation (CN114499057A) · 2022</span></div>
+    <div class="paper-item" style="border-left-color:var(--line-light);">🌟 <span class="lang-zh">海底气泡检测方法及装置（CN113899737A）· 2022</span><span class="lang-en">Underwater Bubble Detection (CN113899737A) · 2022</span></div>
   </div>
 </section>
 
-<hr>
+<div class="divider"></div>
 
-<!-- Publications -->
-<section id="pubs">
-  <h2><span class="block-zh">论文与专利</span><span class="block-en">Publications &amp; Patents</span></h2>
-  <div class="pub-list">
-    <div class="pub-item"><p>J. Lu, et al. "Memoryless Continuous-Phase Chirp Spread Spectrum for Mud Pulse Telemetry." <span class="venue">ICICSP 2024</span></p></div>
-    <div class="pub-item"><p>J. Lu, et al. "Recursive Bayesian Inference for Structured Harmonic Interference Cancellation." <span class="venue">ICFSP 2026</span> (Accepted)</p></div>
-    <div class="pub-item"><p>Z. Sha, J. Zhu, J. Lu, et al. "Newtonized sparse channel estimation..." <span class="venue">Geoenergy Science and Engineering</span>, 2025</p></div>
-    <div class="pub-item"><p>Y. Yuan, et al. "Topology Optimization..." <span class="venue">OCEANS 2025 Brest</span></p></div>
-    <div class="pub-item"><p>Y. Lu, J. Lu, et al. "An Array Calibration Method..." <span class="venue">OCEANS 2024</span></p></div>
-    <div class="pub-item"><p>Z. Sha, et al. "Interference Cancellation for Magnetometers in ROVs." <span class="venue">IEEE Sensors Journal</span>, 2023</p></div>
-    <div class="pub-item"><p><span class="block-zh">🌟 自适应数据压缩方法、系统及设备（CN120357909A）· 2025</span><span class="block-en">🌟 Adaptive Data Compression System (CN120357909A) · 2025</span></p></div>
-    <div class="pub-item"><p><span class="block-zh">🌟 无刷直流电机磁干扰消除方法（CN114499057A）· 2022</span><span class="block-en">🌟 Brushless DC Motor EMI Cancellation (CN114499057A) · 2022</span></p></div>
-    <div class="pub-item"><p><span class="block-zh">🌟 海底气泡检测方法及装置（CN113899737A）· 2022</span><span class="block-en">🌟 Underwater Bubble Detection Method (CN113899737A) · 2022</span></p></div>
+<section>
+  <h2 class="reveal"><span class="block-zh">社会活动</span><span class="block-en">Activities</span></h2>
+  <div class="act-grid reveal" style="transition-delay:.1s;">
+    <span class="act-item">中共党员</span>
+    <span class="act-item"><span class="lang-zh">二星级志愿者</span><span class="lang-en">2-Star Volunteer</span></span>
+    <span class="act-item"><span class="lang-zh">优秀团干部</span><span class="lang-en">Outstanding League Cadre</span></span>
+    <span class="act-item"><span class="lang-zh">优秀研究生</span><span class="lang-en">Outstanding Graduate</span></span>
+    <span class="act-item">🏓 乒乓球赛八强</span>
+    <span class="act-item">🎯 标枪</span>
+    <span class="act-item">🏃 马拉松</span>
+    <span class="act-item">🌱 农场耕作</span>
+    <span class="act-item">🎭 文琴舞蹈团</span>
+    <span class="act-item"><span class="lang-zh">海洋技术大会参展</span><span class="lang-en">OCEANS Exhibitor</span></span>
+    <span class="act-item"><span class="lang-zh">项目突出贡献奖</span><span class="lang-en">Project Contribution Award</span></span>
   </div>
 </section>
 
-<hr>
+<div class="divider"></div>
 
 <!-- Blog -->
 <section id="blog">
-  <h2><span class="block-zh">博客</span><span class="block-en">Blog</span></h2>
+  <h2 class="reveal"><span class="block-zh">博客</span><span class="block-en">Blog</span></h2>
   <div class="blog-grid">
-    <a href="https://mp.weixin.qq.com/s/Lc9x50-N0wdiOlq2bLlZFQ" class="blog-card" target="_blank">
+    <a href="https://mp.weixin.qq.com/s/Lc9x50-N0wdiOlq2bLlZFQ" class="blog-card reveal" target="_blank" style="transition-delay:.1s;">
       <div class="date">Apr 15, 2026</div>
       <h3 class="block-zh">AI时代和普通人的思考</h3>
       <h3 class="block-en">AI and Ordinary People</h3>
       <p class="block-zh">从Sam Altman家被扔燃烧弹说起——当AI的发展速度和普通人之间的距离越来越远，我们该如何自处？</p>
-      <p class="block-en">Starting from the Molotov cocktail at Sam Altman's home — how do we navigate the growing distance between AI's pace and everyday life?</p>
+      <p class="block-en">Starting from the Molotov cocktail at Sam Altman's home — the growing distance between AI's pace and everyday life.</p>
       <span class="tag">AI · <span class="lang-zh">随笔</span><span class="lang-en">Essay</span></span>
     </a>
-    <a href="https://mp.weixin.qq.com/s/R-IIFyvxXnx8iYu--V92tg" class="blog-card" target="_blank">
+    <a href="https://mp.weixin.qq.com/s/R-IIFyvxXnx8iYu--V92tg" class="blog-card reveal" target="_blank" style="transition-delay:.2s;">
       <div class="date">Apr 2026</div>
       <h3 class="block-zh">2026普通人配置AI工具全景指南</h3>
       <h3 class="block-en">2026 AI Tools Panoramic Guide</h3>
@@ -499,13 +473,11 @@
   </div>
 </section>
 
-<hr>
+<div class="divider"></div>
 
-<!-- Skills -->
-<section id="skills">
-  <h2 class="block-zh">技能</h2>
-  <h2 class="block-en">Skills</h2>
-  <div class="skills-grid">
+<section>
+  <h2 class="reveal"><span class="block-zh">技能</span><span class="block-en">Skills</span></h2>
+  <div class="skills-grid reveal" style="transition-delay:.1s;">
     <span class="skill-tag block-zh">信号处理</span><span class="skill-tag block-en">Signal Processing</span>
     <span class="skill-tag block-zh">自适应滤波</span><span class="skill-tag block-en">Adaptive Filtering</span>
     <span class="skill-tag block-zh">噪声对消</span><span class="skill-tag block-en">Noise Cancellation</span>
@@ -518,53 +490,39 @@
     <span class="skill-tag">OpenCV</span>
     <span class="skill-tag block-zh">上位机开发</span><span class="skill-tag block-en">App Designer</span>
     <span class="skill-tag block-zh">音频算法</span><span class="skill-tag block-en">Audio Algorithms</span>
-    <span class="skill-tag block-zh">机器学习</span><span class="skill-tag block-en">Machine Learning</span>
   </div>
 </section>
 
-<hr>
+<div class="divider"></div>
 
 <!-- Contact -->
 <section id="contact">
-  <h2><span class="block-zh">联系</span><span class="block-en">Contact</span></h2>
-  <div class="contact-grid">
-    <div class="contact-item"><span class="label">Email</span><a href="mailto:jiaxun101@outlook.com">jiaxun101@outlook.com</a></div>
-    <div class="contact-item"><span class="label">GitHub</span><a href="https://github.com/ShawnJLewis" target="_blank">ShawnJLewis</a></div>
-    <div class="contact-item"><span class="label block-zh">学术搜索</span><span class="label block-en">Scholar</span><a href="https://scholar.google.com" target="_blank">Search</a></div>
-  </div>
-  <p style="margin-top:1rem;font-size:.88rem;color:var(--fg-muted);">
+  <h2 class="reveal"><span class="block-zh">联系</span><span class="block-en">Contact</span></h2>
+  <p class="reveal" style="transition-delay:.1s;color:var(--fg-muted);font-size:.9rem;">
     <span class="block-zh">对音频算法、信号处理、声学工程相关岗位开放中。</span>
     <span class="block-en">Open to audio algorithm, signal processing, and acoustic engineering roles.</span>
   </p>
+  <div class="hero-meta reveal" style="transition-delay:.2s;">
+    <a href="mailto:jiaxun101@outlook.com">jiaxun101@outlook.com</a>
+    <a href="https://github.com/ShawnJLewis" target="_blank">GitHub · ShawnJLewis</a>
+  </div>
 </section>
 
 <footer>
-  <p><span class="block-zh">卢家勋 · 浙江大学</span><span class="block-en">Jiaxun Lu · Zhejiang University</span> · <span class="block-zh">子辰奖学金候选人</span><span class="block-en">Zichen Scholarship Candidate</span></p>
+  <p>Jiaxun Lu · <span class="block-zh">浙江大学</span><span class="block-en">Zhejiang University</span> · <a href="https://shawnjlewis.github.io/jiaxun-portfolio/">shawnjlewis.github.io/jiaxun-portfolio</a></p>
 </footer>
 
 </div>
 
 <script>
-function toggleTheme() {
-  const html = document.documentElement;
-  const dark = html.getAttribute('data-theme') === 'dark';
-  html.setAttribute('data-theme', dark ? 'light' : 'dark');
-  localStorage.setItem('theme', dark ? 'light' : 'dark');
-}
-function toggleLang() {
-  const html = document.documentElement;
-  const btn = document.getElementById('langBtn');
-  const current = html.getAttribute('lang');
-  const next = current === 'en' ? 'zh' : 'en';
-  html.setAttribute('lang', next);
-  btn.textContent = next === 'en' ? 'EN' : '中';
-  localStorage.setItem('lang', next);
-}
-const savedTheme = localStorage.getItem('theme') || 'dark';
-document.documentElement.setAttribute('data-theme', savedTheme);
-const savedLang = localStorage.getItem('lang') || 'zh';
-document.documentElement.setAttribute('lang', savedLang);
-document.getElementById('langBtn').textContent = savedLang === 'en' ? 'EN' : '中';
+function toggleTheme() { const h=document.documentElement; const d=h.getAttribute('data-theme')==='dark'; h.setAttribute('data-theme',d?'light':'dark'); localStorage.setItem('theme',d?'light':'dark'); }
+function toggleLang() { const h=document.documentElement; const b=document.getElementById('langBtn'); const n=h.getAttribute('lang')==='en'?'zh':'en'; h.setAttribute('lang',n); b.textContent=n==='en'?'EN':'中'; localStorage.setItem('lang',n); }
+const st=localStorage.getItem('theme')||'dark'; document.documentElement.setAttribute('data-theme',st);
+const sl=localStorage.getItem('lang')||'zh'; document.documentElement.setAttribute('lang',sl); document.getElementById('langBtn').textContent=sl==='en'?'EN':'中';
+
+// Scroll reveal
+const observer=new IntersectionObserver((entries)=>{entries.forEach(e=>{if(e.isIntersecting){e.target.classList.add('visible'); observer.unobserve(e.target);}})},{threshold:.12});
+document.querySelectorAll('.reveal').forEach(el=>observer.observe(el));
 </script>
 </body>
 </html>
