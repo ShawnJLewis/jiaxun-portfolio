@@ -1,0 +1,240 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Jiaxun Lu — Resume</title>
+  <style>
+    :root {
+      --bg: #fafafa;
+      --text: #1a1a1a;
+      --muted: #666;
+      --accent: #2563eb;
+      --border: #e0e0e0;
+      --card: #fff;
+    }
+    [data-theme="dark"] {
+      --bg: #111;
+      --text: #e0e0e0;
+      --muted: #999;
+      --accent: #60a5fa;
+      --border: #333;
+      --card: #1a1a1a;
+    }
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+    body {
+      font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+      background: var(--bg);
+      color: var(--text);
+      line-height: 1.7;
+      transition: background .3s, color .3s;
+    }
+    .container { max-width: 820px; margin: 0 auto; padding: 2rem 1.5rem 4rem; }
+    
+    /* Hero */
+    header { padding: 3rem 0 2rem; border-bottom: 1px solid var(--border); margin-bottom: 2rem; }
+    h1 { font-size: 2.2rem; font-weight: 700; letter-spacing: -.5px; }
+    .subtitle { color: var(--muted); font-size: 1.1rem; margin-top: .3rem; }
+    .meta { display: flex; flex-wrap: wrap; gap: .8rem 2rem; margin-top: 1rem; font-size: .9rem; color: var(--muted); }
+    .meta a { color: var(--accent); text-decoration: none; }
+    .theme-toggle {
+      position: fixed; top: 1rem; right: 1rem;
+      background: var(--card); border: 1px solid var(--border);
+      color: var(--text); padding: .4rem .8rem; border-radius: 6px;
+      cursor: pointer; font-size: .85rem;
+    }
+
+    /* Sections */
+    section { margin-bottom: 2.5rem; }
+    h2 {
+      font-size: 1.1rem; font-weight: 600; text-transform: uppercase;
+      letter-spacing: 1px; color: var(--accent); margin-bottom: 1rem;
+      padding-bottom: .4rem; border-bottom: 1px solid var(--border);
+    }
+    
+    /* Items */
+    .item { margin-bottom: 1.4rem; }
+    .item-head { display: flex; justify-content: space-between; align-items: baseline; flex-wrap: wrap; }
+    .item-title { font-weight: 600; font-size: 1rem; }
+    .item-org { color: var(--muted); font-size: .9rem; }
+    .item-period { color: var(--muted); font-size: .85rem; white-space: nowrap; }
+    .item-body { margin-top: .3rem; font-size: .92rem; color: var(--muted); }
+    .item-body li { list-style: none; padding: .15rem 0; }
+    .item-body li::before { content: "→ "; color: var(--accent); }
+
+    /* Skills */
+    .skills-grid { display: flex; flex-wrap: wrap; gap: .5rem; }
+    .tag {
+      background: var(--border); color: var(--text);
+      padding: .25rem .7rem; border-radius: 4px; font-size: .82rem;
+    }
+
+    /* Contact */
+    .contact-links { display: flex; flex-wrap: wrap; gap: 1rem; margin-top: .5rem; }
+    .contact-links a { color: var(--accent); text-decoration: none; font-size: .95rem; }
+
+    @media (max-width: 600px) {
+      h1 { font-size: 1.7rem; }
+      .container { padding: 1rem 1rem 3rem; }
+    }
+  </style>
+</head>
+<body>
+  <button class="theme-toggle" onclick="toggleTheme()">◑ Theme</button>
+  <div class="container">
+    <header>
+      <h1>Jiaxun Lu</h1>
+      <p class="subtitle">Signal Processing &amp; Underwater Communication — PhD Candidate</p>
+      <div class="meta">
+        <span>📧 <a href="mailto:jiaxun101@outlook.com">jiaxun101@outlook.com</a></span>
+        <span>📱 188 8891 5871</span>
+        <span>📍 Hangzhou, China</span>
+        <span>🎓 Zhejiang University</span>
+      </div>
+    </header>
+
+    <section>
+      <h2>About</h2>
+      <p style="color:var(--muted); max-width:640px;">
+        PhD candidate at Zhejiang University, specializing in mud pulse telemetry and underwater acoustic communication. 
+        Focused on adaptive noise cancellation, structured interference suppression, and real-time signal processing 
+        for extreme environments. Experienced across MATLAB, Python, FPGA (Verilog), and embedded systems (STM32/Linux).
+        Currently exploring audio algorithm development and its intersection with signal processing.
+      </p>
+    </section>
+
+    <section>
+      <h2>Research &amp; Projects</h2>
+
+      <div class="item">
+        <div class="item-head">
+          <div class="item-title">High-Speed Downhole Information Transmission</div>
+          <span class="item-period">2023 — 2026</span>
+        </div>
+        <div class="item-org">SINOPEC "Jiebai Guashuai" Project · Core Member</div>
+        <ul class="item-body">
+          <li>Built multi-source pump noise model in MATLAB; combined Kalman filtering with LMS/RLS adaptive filtering achieving &gt;99% noise reconstruction accuracy and 15dB+ SNR improvement</li>
+          <li>Led real-time processing software architecture; App Designer modules for data acquisition, denoising, and equalization — 1s display latency, 90%+ efficiency gain</li>
+        </ul>
+      </div>
+
+      <div class="item">
+        <div class="item-head">
+          <div class="item-title">High-Speed Underwater Acoustic Communication</div>
+          <span class="item-period">2022 — 2024</span>
+        </div>
+        <div class="item-org">National Science Fund for Distinguished Young Scholars · Algorithm Development</div>
+        <ul class="item-body">
+          <li>Applied STFT, notch filtering, and MVDR beamforming to suppress thruster noise — 10dB+ SNR gain, BER reduced below 1e-5</li>
+          <li>Designed SNR-adaptive frame synchronization in Verilog/FPGA; zero frame-miss in 5km Zhoushan sea trial</li>
+        </ul>
+      </div>
+
+      <div class="item">
+        <div class="item-head">
+          <div class="item-title">Visual Navigation Robot</div>
+          <span class="item-period">2020 — 2021</span>
+        </div>
+        <div class="item-org">National Underwater Robot Competition · Team Lead</div>
+        <ul class="item-body">
+          <li>Linux + STM32 embedded system; OpenCV image processing and Python-based OCR model</li>
+          <li>PID motor control for underwater line-following, obstacle avoidance, and target recognition — <strong>National 1st Prize</strong></li>
+        </ul>
+      </div>
+    </section>
+
+    <section>
+      <h2>Experience</h2>
+
+      <div class="item">
+        <div class="item-head">
+          <div class="item-title">Audio Algorithm Engineering Intern</div>
+          <span class="item-period">Xiaomi</span>
+        </div>
+        <div class="item-org">2025 — Present · Interview completed</div>
+        <ul class="item-body">
+          <li>Technical interview focused on audio signal processing, noise cancellation, and real-time algorithm optimization</li>
+        </ul>
+      </div>
+
+      <div class="item">
+        <div class="item-head">
+          <div class="item-title">Algorithm Engineering Intern</div>
+          <span class="item-period">Lingdong Smart Optics (Hangzhou)</span>
+        </div>
+        <div class="item-org">Jul — Sep 2021</div>
+        <ul class="item-body">
+          <li>Designed underwater laser scattering experiments across turbidity levels</li>
+          <li>Optimized laser-camera based underwater bubble flux algorithm; 1 patent granted</li>
+        </ul>
+      </div>
+    </section>
+
+    <section>
+      <h2>Publications &amp; Patents</h2>
+      <div class="item">
+        <ul class="item-body">
+          <li>J. Lu, et al., "Memoryless Continuous-Phase Chirp Spread Spectrum for Mud Pulse Telemetry," <em>ICICSP 2024</em></li>
+          <li>J. Lu, et al., "Recursive Bayesian Inference for Structured Harmonic Interference Cancellation," <em>ICFSP 2026</em> (Accepted)</li>
+          <li>Z. Sha, J. Lu, et al., "Interference Cancellation for Magnetometers in ROVs," <em>IEEE Sensors Journal</em>, 2023</li>
+          <li>5 patents as 1st/2nd inventor: mud pulse channel estimation, low-frequency diversity switching, brushless motor EMI cancellation, adaptive data compression</li>
+        </ul>
+      </div>
+    </section>
+
+    <section>
+      <h2>Honors</h2>
+      <div class="item-body">
+        <li>National Underwater Robot Competition — 1st Prize (2021)</li>
+        <li>Acoustical Society of China "Hailan Cup" — 1st Prize (2024)</li>
+        <li>Zhejiang Province Ocean Knowledge Competition (Innovation) — 1st Prize (2024)</li>
+        <li>Zhejiang International College Student Innovation Competition — Bronze (2024)</li>
+        <li>Apple Mobile App Innovation Challenge — East China 3rd Prize (2024)</li>
+        <li>Zhejiang University 2nd Class Scholarship / CASC Public Welfare Scholarship</li>
+      </div>
+    </section>
+
+    <section>
+      <h2>Skills</h2>
+      <div class="skills-grid">
+        <span class="tag">Signal Processing</span>
+        <span class="tag">Adaptive Filtering</span>
+        <span class="tag">Noise Cancellation</span>
+        <span class="tag">MATLAB</span>
+        <span class="tag">Python</span>
+        <span class="tag">Verilog / FPGA</span>
+        <span class="tag">C/C++</span>
+        <span class="tag">STM32</span>
+        <span class="tag">Linux Embedded</span>
+        <span class="tag">OpenCV</span>
+        <span class="tag">App Designer</span>
+        <span class="tag">TOEFL 104</span>
+        <span class="tag">Machine Learning</span>
+        <span class="tag">Audio Algorithms</span>
+      </div>
+    </section>
+
+    <section>
+      <h2>Contact</h2>
+      <div class="contact-links">
+        <a href="mailto:jiaxun101@outlook.com">jiaxun101@outlook.com</a>
+        <a href="#">GitHub</a>
+        <a href="#">LinkedIn</a>
+      </div>
+    </section>
+  </div>
+
+  <script>
+    function toggleTheme() {
+      const html = document.documentElement;
+      const dark = html.getAttribute('data-theme') === 'dark';
+      html.setAttribute('data-theme', dark ? 'light' : 'dark');
+      localStorage.setItem('theme', dark ? 'light' : 'dark');
+    }
+    // Load saved theme
+    if (localStorage.getItem('theme') === 'dark') {
+      document.documentElement.setAttribute('data-theme', 'dark');
+    }
+  </script>
+</body>
+</html>
