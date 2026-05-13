@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="zh" data-theme="dark">
+<html lang="zh" data-theme="light">
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -9,33 +9,33 @@
   <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&family=Noto+Serif+SC:wght@400;600;700&display=swap" rel="stylesheet">
   <style>
     :root {
-      --bg: oklch(8% 0.01 75);
-      --bg-alt: oklch(11% 0.01 75);
-      --bg-card: oklch(14% 0.008 75);
-      --fg: oklch(88% 0.01 75);
-      --fg-heading: oklch(95% 0.006 75);
-      --fg-muted: oklch(55% 0.015 75);
-      --accent: oklch(65% 0.14 55);
-      --accent-dim: oklch(65% 0.14 55 / 0.12);
-      --line: oklch(20% 0.008 75);
-      --line-light: oklch(26% 0.01 75);
-      --font-display: 'Space Grotesk', 'Noto Serif SC', sans-serif;
-      --font-body: 'Noto Serif SC', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
-      --max-w: 920px;
-      --radius-sm: 4px;
-      --radius-md: 10px;
-    }
-    [data-theme="light"] {
       --bg: oklch(96% 0.005 75);
       --bg-alt: oklch(93% 0.006 75);
       --bg-card: oklch(98% 0.005 75);
       --fg: oklch(16% 0.015 75);
       --fg-heading: oklch(8% 0.02 75);
       --fg-muted: oklch(45% 0.015 75);
-      --accent: oklch(48% 0.16 55);
-      --accent-dim: oklch(48% 0.16 55 / 0.08);
+      --accent: oklch(38% 0.13 265);
+      --accent-dim: oklch(38% 0.13 265 / 0.10);
       --line: oklch(85% 0.008 75);
       --line-light: oklch(78% 0.01 75);
+      --font-display: 'Space Grotesk', 'Noto Serif SC', sans-serif;
+      --font-body: 'Noto Serif SC', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+      --max-w: 920px;
+      --radius-sm: 4px;
+      --radius-md: 10px;
+    }
+    [data-theme="dark"] {
+      --bg: oklch(8% 0.01 75);
+      --bg-alt: oklch(11% 0.01 75);
+      --bg-card: oklch(14% 0.008 75);
+      --fg: oklch(88% 0.01 75);
+      --fg-heading: oklch(95% 0.006 75);
+      --fg-muted: oklch(55% 0.015 75);
+      --accent: oklch(62% 0.14 260);
+      --accent-dim: oklch(62% 0.14 260 / 0.12);
+      --line: oklch(20% 0.008 75);
+      --line-light: oklch(26% 0.01 75);
     }
     [lang="zh"] { --font-display: 'Noto Serif SC', 'Space Grotesk', serif; --font-body: 'Noto Serif SC', -apple-system, sans-serif; }
     .lang-zh { display: none; } .lang-en { display: inline; }
@@ -71,6 +71,7 @@
       color: var(--fg-heading);
       margin-bottom: 1.5rem;
     }
+    section[id] h2 { display: inline-block; }
     h3 {
       font-size: 1.1rem;
       font-weight: 600;
@@ -120,6 +121,13 @@
       position: relative;
     }
     .hero h1 { margin-bottom: .8rem; }
+    .hero h1::after {
+      content: ''; display: block;
+      width: 2.4rem; height: 3px;
+      background: var(--accent);
+      margin-top: .6rem;
+      border-radius: 2px;
+    }
     .hero .tagline {
       font-size: 1.1rem; color: var(--fg-muted);
       max-width: 54ch; line-height: 1.7;
@@ -517,8 +525,8 @@
 <script>
 function toggleTheme() { const h=document.documentElement; const d=h.getAttribute('data-theme')==='dark'; h.setAttribute('data-theme',d?'light':'dark'); localStorage.setItem('theme',d?'light':'dark'); }
 function toggleLang() { const h=document.documentElement; const b=document.getElementById('langBtn'); const n=h.getAttribute('lang')==='en'?'zh':'en'; h.setAttribute('lang',n); b.textContent=n==='en'?'EN':'中'; localStorage.setItem('lang',n); }
-const st=localStorage.getItem('theme')||'dark'; document.documentElement.setAttribute('data-theme',st);
-const sl=localStorage.getItem('lang')||'zh'; document.documentElement.setAttribute('lang',sl); document.getElementById('langBtn').textContent=sl==='en'?'EN':'中';
+const st=localStorage.getItem('theme')||'light'; document.documentElement.setAttribute('data-theme',st);
+const sl=localStorage.getItem('lang')||'zh'; document.documentElement.setAttribute('lang',sl); document.getElementById('langBtn').textContent=sl==='en'?'中':'EN';
 
 // Scroll reveal
 const observer=new IntersectionObserver((entries)=>{entries.forEach(e=>{if(e.isIntersecting){e.target.classList.add('visible'); observer.unobserve(e.target);}})},{threshold:.12});
